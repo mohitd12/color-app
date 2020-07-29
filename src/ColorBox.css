@@ -1,0 +1,119 @@
+.ColorBox {
+	flex: 0 1 20%;
+	position: relative;
+	text-transform: uppercase;
+	transition: all 0.1s linear;
+}
+
+@media (max-width: 991.98px) {
+	.ColorBox {
+		flex: 0 1 25%;
+		min-height: 20%;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.ColorBox {
+		flex: 0 1 33.33%;
+		min-height: 20%;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.ColorBox {
+		flex: 0 1 50%;
+		min-height: 20%;
+	}
+}
+
+.copy-button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	outline: none;
+	border: 1px solid rgba(100, 255, 255, 0.74);
+	border-radius: 3px;
+	padding: 0.5em 1em;
+	font-weight: bolder;
+	background: rgba(255, 255, 255, 0.7);
+	opacity: 0;
+	transition: all 0.2s ease-out;
+	text-transform: uppercase;
+}
+
+.ColorBox:hover .copy-button {
+	opacity: 1;
+}
+
+.see-more {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+	color: #eee;
+	padding: 0.2em 0.4em;
+	opacity: 0.9;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.copy-container {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: flex-end;
+}
+
+.copy-container > .box-content {
+	letter-spacing: 1px;
+	margin: 8px;
+	font-size: 12px;
+}
+
+.copy-overlay {
+	opacity: 0;
+	z-index: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transform: scale(0.1);
+	transition: transform 0.6s linear;
+}
+
+.copy-overlay.show {
+	opacity: 1;
+	z-index: 10;
+	transform: scale(40);
+}
+
+.copy-msg {
+	background: rgba(0, 0, 0, 0.1);
+	text-align: center;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	opacity: 0;
+	z-index: 0;
+	transform: translate(-50%, -50%) scale(0);
+	transition: transform 0.4s ease;
+	transition-delay: 0.2s;
+	color: #fff;
+	text-shadow: 1px 1px 2px #000;
+}
+
+.copy-msg h1 {
+	font-size: 2rem;
+}
+
+.copy-msg p {
+	font-size: 1.2em;
+}
+
+.copy-msg.show {
+	opacity: 1;
+	z-index: 10;
+	transform: translate(-50%, -50%) scale(1);
+}
